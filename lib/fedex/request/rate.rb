@@ -9,8 +9,8 @@ module Fedex
         puts api_response if @debug
         response = parse_response(api_response)
         if raw
-        return response
-      end
+          return response
+        end
         if success?(response)
           rate_reply_details = response[:rate_reply][:rate_reply_details] || []
           rate_reply_details = [rate_reply_details] if rate_reply_details.is_a?(Hash)
