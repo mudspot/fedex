@@ -40,8 +40,8 @@ module Fedex
     # @param [Hash] recipient, A hash containing the recipient information
     # @param [Array] packages, An array including a hash for each package being shipped
     # @param [String] service_type, A valid fedex service type, to view a complete list of services Fedex::Shipment::SERVICE_TYPES
-    def rate(options = {})
-      Request::Rate.new(@credentials, options).process_request
+    def rate(options = {}, raw=false)
+      Request::Rate.new(@credentials, options).process_request raw
     end
 
     # @param [Hash] address, A hash containing the address information
